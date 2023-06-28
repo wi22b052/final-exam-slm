@@ -25,4 +25,19 @@ class SpringControllerTest {
         String result = controller.modify("heLLo");
         assertEquals("hElLo",result);
     }
+
+    @Test
+    void length_with_message(){
+        SpringController controller = new SpringController();
+        controller.modify("heLLo");
+        int result = controller.getLength();
+        assertEquals(5,result);
+    }
+
+    @Test
+    void length_without_message(){
+        SpringController controller = new SpringController();
+        int result = controller.getLength();
+        assertEquals(0,result);
+    }
 }
